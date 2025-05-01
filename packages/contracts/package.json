@@ -12,7 +12,8 @@
     "sync-abi": "npx hardhat run scripts/sync-abi.ts"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.0.1"
+    "@openzeppelin/contracts": "^5.0.1",
+    "pino-pretty": "^13.0.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",

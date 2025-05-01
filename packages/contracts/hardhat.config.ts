@@ -25,7 +25,7 @@ const config: HardhatUserConfig = {
     },
   },
   typechain: {
-    outDir: "typechain",
+    outDir: "../frontend/src/types/contracts",
     target: "ethers-v6",
   },
   gasReporter: {
