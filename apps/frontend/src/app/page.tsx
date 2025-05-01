@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { TokenBalance } from "../components/TokenBalance";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold">
           Welcome to the Hackathon Template
         </h1>
+        <TokenBalance />
         <Button>Click me</Button>
       </div>
 
