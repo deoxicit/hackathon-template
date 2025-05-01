@@ -1,6 +1,4 @@
-import { Navbar } from "../components/Navbar";
-import { Hero } from "../components/Hero";
-import { Features } from "../components/Features";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -12,10 +10,11 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="relative flex place-items-center">
+      <div className="relative flex flex-col place-items-center gap-4">
         <h1 className="text-4xl font-bold">
           Welcome to the Hackathon Template
         </h1>
+        <Button>Click me</Button>
       </div>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
