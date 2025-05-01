@@ -4,6 +4,9 @@ import "@typechain/hardhat";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -16,11 +19,9 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    hardhat: {
-      chainId: 31337,
-    },
+    hardhat: {},
     localhost: {
-      chainId: 31337,
+      url: "http://127.0.0.1:8545",
     },
   },
   typechain: {
@@ -30,6 +31,12 @@ const config: HardhatUserConfig = {
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
     currency: "USD",
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts",
   },
 };
 
