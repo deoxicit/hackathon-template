@@ -1,12 +1,17 @@
 import { HackathonToken } from "../../../packages/contracts/typechain-types";
 
+export type ContractName = "HackathonToken";
+
 export const CONTRACT_ADDRESSES = {
   localhost: {
-    HackathonToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3" as const,
+    HackathonToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
   },
 } as const;
 
-export type ContractName = keyof typeof CONTRACT_ADDRESSES.localhost;
+export const CONTRACT_ABIS = {
+  HackathonToken: require("../contracts/HackathonToken.json").abi,
+} as const;
+
 export type ContractInstance = HackathonToken;
 
 export const getContractAddress = (
