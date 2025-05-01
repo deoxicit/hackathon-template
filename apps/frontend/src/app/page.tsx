@@ -1,41 +1,71 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { TokenBalance } from "../components/TokenBalance";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex justify-between items-center mb-16">
+          <h1 className="text-3xl font-bold">Hackathon Template</h1>
+          <ConnectButton />
+        </div>
 
-      <div className="relative flex flex-col place-items-center gap-4">
-        <h1 className="text-4xl font-bold">
-          Welcome to the Hackathon Template
-        </h1>
-        <TokenBalance />
-        <Button>Click me</Button>
-      </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <h2 className="text-5xl font-bold leading-tight">
+              Build Your Next <span className="text-blue-500">Web3</span>{" "}
+              Project
+            </h2>
+            <p className="text-xl text-gray-300">
+              A modern full-stack dApp template for hackathons. Get started
+              quickly with our pre-configured setup.
+            </p>
+            <div className="flex gap-4">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10"
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about the template features and API.
-          </p>
-        </a>
+          <div className="bg-gray-800/50 rounded-2xl p-8 backdrop-blur-sm">
+            <TokenBalance />
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-32 grid md:grid-cols-3 gap-8">
+          <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
+            <h3 className="text-xl font-semibold mb-4">Built with Next.js</h3>
+            <p className="text-gray-300">
+              Modern React framework for building full-stack web applications.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
+            <h3 className="text-xl font-semibold mb-4">Smart Contracts</h3>
+            <p className="text-gray-300">
+              Pre-configured Hardhat setup with TypeScript and OpenZeppelin.
+            </p>
+          </div>
+          <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm">
+            <h3 className="text-xl font-semibold mb-4">Web3 Integration</h3>
+            <p className="text-gray-300">
+              Seamless wallet connection with RainbowKit and Wagmi.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   );
